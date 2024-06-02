@@ -39,10 +39,13 @@
  - Нажмите Win + R, введите cmd и нажмите Enter для открытия командной строки.
  - Либо нажмите Win + X и выберите Windows PowerShell.
 2. Перейдите в директорию проекта:
+
 cd ...\ITACWT
+
 3. Соберите Docker образ:
    
 docker build -t itacwt .
-5. Запустите Docker контейнер:
+
+4. Запустите Docker контейнер:
 
 docker run --rm itacwt
