@@ -30,7 +30,7 @@ public class MainPageSteps extends BaseSteps {
     }
 
     public MainPageSteps closeNewFrame() {
-        clickOn(popupPage.getClosePopup());
+        clickOn(popupPage.getCloseFrame());
         return this;
     }
 

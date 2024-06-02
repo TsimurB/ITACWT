@@ -26,7 +26,6 @@ public class DriverFactory {
             default:
                 WebDriverManager.chromedriver().setup();
                 ChromeOptions chromeOptions = new ChromeOptions();
-//                chromeOptions.addArguments("--disable-notifications");
                 chromeOptions.addArguments("--headless");
                 chromeOptions.addArguments("--no-sandbox");
                 chromeOptions.addArguments("--disable-dev-shm-usage");
