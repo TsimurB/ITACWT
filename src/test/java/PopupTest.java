@@ -21,7 +21,6 @@ public class PopupTest extends BaseTest {
                 .verifyReceiveCopyButtonPresenceInFrame();
     }
 
-
     @Test
     public void testCloseButtonWork() {
         mainPageSteps

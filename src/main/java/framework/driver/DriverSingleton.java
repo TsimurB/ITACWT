@@ -1,6 +1,5 @@
 package framework.driver;
 
-import framework.driver.DriverFactory;
 import org.openqa.selenium.WebDriver;
 
 public class DriverSingleton {

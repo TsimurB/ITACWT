@@ -9,21 +9,18 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 
 import static framework.utils.PropsReader.getProperty;
 
-
 public class DriverFactory {
     private static final String BROWSER = getProperty("BROWSER");
 
     public static WebDriver create() {
         switch (BROWSER) {
-            case "firefox":
+            case "firefox" -> {
                 WebDriverManager.firefoxdriver().setup();
                 FirefoxOptions firefoxOptions = new FirefoxOptions();
                 firefoxOptions.addPreference("dom.push.enabled", false);
                 return new FirefoxDriver(firefoxOptions);
-
-            case "chrome":
-
-            default:
+            }
+            case "chrome" -> {
                 WebDriverManager.chromedriver().setup();
                 ChromeOptions chromeOptions = new ChromeOptions();
                 chromeOptions.addArguments("--headless");
@@ -33,6 +30,8 @@ public class DriverFactory {
                 chromeOptions.addArguments("--disable-extensions");
                 chromeOptions.addArguments("--remote-allow-origins=*");
                 return new ChromeDriver(chromeOptions);
+            }
+            default -> throw new IllegalArgumentException("Unknown browser type: " + BROWSER);
         }
     }
 }
